@@ -5,6 +5,11 @@ body{
   margin: 10px 0 0 25px;
   display: flex;
 }
+.contacts-pane{
+  width: 15%;
+  text-align: center;
+  overflow-x: hidden;
+}
 .pane-heading{
   padding: 10px 0;
   font-weight: bold;
@@ -15,27 +20,28 @@ body{
   cursor: pointer;
 }
 .view-details{
-  /* visibility: hidden; */
-  width: 50%;
+  width: 40%;
   margin:20px 0 0 5%;
-  border: 1px solid rgba(0,0,0,0.5);
 }
 .details-header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .details-heading{
+  padding-left: 50px;
+  overflow-x: hidden;
   font-size: 40px;
 }
  .details-options{
    display: flex;
-   border: 1px solid black;
-   margin-top: 15px;
+   margin-top: 20px;
    justify-content: space-around;
  }
 .details-option{
   padding: 0 10px;
   cursor: pointer;
+  height: 20px;
+  border-style: none;
 }
 .table{
   display: table;

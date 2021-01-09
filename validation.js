@@ -15,7 +15,7 @@ function validateForm() {
 }
 
 function validateName() {
-  var name = document.getElementById('name').value;
+  var name = $(".form").find('.name').val();
   if (name.length == 0) {
     document.getElementById('nameError').innerHTML = "&nbsp;Name is required";
     return false;
@@ -26,8 +26,7 @@ function validateName() {
 }
 
 function validateEmail() {
-  var mail = document.getElementById('email').value;
-  // regular expression for valid email id
+  var mail = $(".form").find('.email').val();
   var mailPattern = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$");
   if (mail.length == 0) {
     document.getElementById('mailError').innerHTML = '&nbsp;Email is required';
@@ -42,8 +41,8 @@ function validateEmail() {
 }
 
 function validatePhone() {
-  var phone = document.getElementById('phone').value;
-  var phonePattern = new RegExp("^\d{10}$");
+  var phone = $(".form").find('.phone').val();
+  var phonePattern = /^\d{10}$/;
   if (phone.length == 0) {
     document.getElementById('phoneError').innerHTML = '&nbsp;Phone number is required';
     return false;
@@ -57,8 +56,8 @@ function validatePhone() {
 }
 
 function validateLandLine() {
-  var landLine = document.getElementById('landLine').value;
-  var landLinePattern = new RegExp("^\d{8,12}$");
+  var landLine = $(".form").find('.landLine').val();
+  var landLinePattern = /^\d{8,12}$/;
   if (landLine.length == 0) {
     document.getElementById('landLineError').innerHTML = '&nbsp;Landline number is required';
     return false;
@@ -72,8 +71,8 @@ function validateLandLine() {
 }
 
 function validateUrl() {
-  var url = document.getElementById('website').value;
-  var urlPattern = new RegExp("^((http|https)://)(www.)?" + "[a-zA-Z0-9@:%._\\+~#?&//=]" + "{2,256}\\.[a-z]" + "{2,6}\\b([-a-zA-Z0-9@:%" + "._\\+~#?&//=]*)$");
+  var url = $(".form").find('.website').val();
+  var urlPattern = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
   if (url.length == 0) {
     document.getElementById('websiteError').innerHTML = '&nbsp;Website address is required';
     return false;
@@ -87,7 +86,7 @@ function validateUrl() {
 }
 
 function validateAddress() {
-  var address = document.getElementById('address').value;
+  var address = $(".form").find('.address').val();
   if (address.length == 0) {
     document.getElementById('addressError').innerHTML = '&nbsp;Address is required';
     return false;
