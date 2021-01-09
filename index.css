@@ -1,0 +1,52 @@
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+.container{
+  margin: 10px 0 0 25px;
+  display: flex;
+}
+.pane-heading{
+  padding: 10px 0;
+  font-weight: bold;
+}
+.contact{
+  padding:10px 30px;
+  border: 1px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.view-details{
+  /* visibility: hidden; */
+  width: 50%;
+  margin:20px 0 0 5%;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.details-header{
+  display: flex;
+  justify-content: space-around;
+}
+.details-heading{
+  font-size: 40px;
+}
+ .details-options{
+   display: flex;
+   border: 1px solid black;
+   margin-top: 15px;
+   justify-content: space-around;
+ }
+.details-option{
+  padding: 0 10px;
+  cursor: pointer;
+}
+.table{
+  display: table;
+  padding: 20px;
+}
+.tr{
+  display: table-row;
+
+}
+.td{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Task 4</title>
+  <link rel="stylesheet" href="addAddress.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Century Gothic">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="validation.js"></script>
+  <script src="addAddress.js"></script>
+</head>
+
+<body>
+  <!-- Technovert heading -->
+  <div class='header'>ADDRESS BOOK</div>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="options">
+      <a class="option" href="index.html">HOME</a>
+      <a class="option present" href="addAddress.html">+ ADD</a>
+    </div>
+
+    <div>
+      <!-- icon -->
+      <img class="navimg" src="img.png" alt="img not found">
+    </div>
+  </div>
+  <div class="container">
+      <div class="table">
+        <div class="tr">
+          <div class="td">Name :</div>
+          <div class="td values"><input type="text" id="name" placeholder="Enter your name"></div>
+          <div id="nameError">*</div>
+        </div>
+        <div class="tr">
+          <div class="td">Email Address :</div>
+          <div class="td values"><input type="text" id="email" placeholder="Enter email address"></div>
+          <div id="mailError">*</div>
+        </div>
+        <div class="tr">
+          <div class="td">Phone :</div>
+          <div class="td values"><input type="number" id="phone" placeholder="Enter phone number"></div>
+          <div id="phoneError">*</div>
+        </div>
+        <div class="tr">
+          <div class="td">Landline :</div>
+          <div class="td values"><input type="number" id="landLine" placeholder="Enter landline number"></div>
+          <div id="landLineError">*</div>
+        </div>
+        <div class="tr">
+          <div class="td">Website :</div>
+          <div class="td values"><input type="text" id="website" placeholder="Enter website url"></div>
+          <div id="websiteError">*</div>
+        </div>
+        <div class="tr">
+          <div class="td">Address</div>
+          <div class="td values"><textarea id="address" rows="4" cols="22" placeholder="Enter address"></textarea></div>
+          <div id="addressError">*</div>
+        </div>
+        <div class="tr" colspan="2">
+          <td> <input type="button" value="Save" onclick="addContact()"></td>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
