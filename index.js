@@ -1,6 +1,6 @@
 var contacts = new Array();
 var currentViewingContact = -1;
-var isChangingContact = false;
+var isContactOpen = false;
 
 function Contact(name, email, phone, landLine, url, address) {
   this.name = name;
@@ -14,7 +14,7 @@ function Contact(name, email, phone, landLine, url, address) {
 function addContact() {
   if (validateForm()) {
     hideAll();
-    if (isChangingContact) {
+    if (isContactOpen) {
       console.log("inside if in addContact");
       updateContact();
       toggleDetails();
@@ -62,14 +62,24 @@ $(document).ready(function() {
   $("#home").click(function() {
     hideAll();
     renderAllContacts();
+    var allContacts=document.getElementsByClassName("contact");
+    if(currentViewingContact!=-1){
+    allContacts[currentViewingContact].classList.remove("present");
+    }
     currentViewingContact = -1
   });
 
   $("#add").click(function() {
-    if (isChangingContact) {
+    var allContacts=document.getElementsByClassName("contact");
+    if(currentViewingContact!=-1){
+    allContacts[currentViewingContact].classList.remove("present");
+    }
+    if (isContactOpen) {
       alert("contact not updated");
     }
+    clearForm();
     currentViewingContact = -1;
+    isContactOpen=false;
     hideAll();
     toggleForm();
   });
@@ -78,8 +88,13 @@ $(document).ready(function() {
     hideAll();
     toggleDetails();
     var clicked = parseInt($(this).attr("id"));
+    var allContacts=document.getElementsByClassName("contact");
+    if(currentViewingContact!=-1){
+    allContacts[currentViewingContact].classList.remove("present");
+    }
     currentViewingContact = clicked;
-    renderContact(currentViewingContact)
+    allContacts[currentViewingContact].classList.add("present");
+    renderContact(currentViewingContact);
   });
 
   init();
@@ -94,13 +109,13 @@ function updateContact() {
   var url = $(".form").find('.website').val();
   var address = $(".form").find('.address').val();
   contacts[currentViewingContact] = new Contact(name, mail, phone, landLine, url, address);
-  isChangingContact = false;
+  isContactOpen = false;
   renderContact(currentViewingContact);
 }
 
-function editContact() {
+function showEditForm() {
   console.log('edit contact' + currentViewingContact);
-  isChangingContact = true;
+  isContactOpen = true;
   hideAll();
   toggleForm();
   $(".form").find(".name").val(contacts[currentViewingContact].name);
@@ -111,7 +126,7 @@ function editContact() {
   $(".form").find('.address').val(contacts[currentViewingContact].address);
 }
 
-function deleteConact() {
+function deleteContact() {
   if (currentViewingContact == -1) {
     alert("Please select a contact to delete");
   } else if (confirm("Are you sure to delete contact?", "")) {
@@ -127,37 +142,40 @@ function deleteConact() {
 }
 
 function cancelAction() {
-  if (isChangingContact) {
+  if (isContactOpen) {
     hideAll();
     toggleDetails();
     renderContact(currentViewingContact);
     clearForm();
-    isChangingContact=false;
+    isContactOpen=false;
   } else {
     hideAll();
   }
 }
 
 function renderContact(index) {
-  $(".view-details").find(".name").text(contacts[index].name);
-  $(".view-details").find(".email").text(contacts[index].email);
-  $(".view-details").find(".phone").text(contacts[index].phone);
-  $(".view-details").find(".landLine").text(contacts[index].landLine);
-  $(".view-details").find(".website").text(contacts[index].url);
-  $(".view-details").find(".address").text(contacts[index].address);
+  var temp;
+  $(".contact-details").find(".name").text(contacts[index].name);
+  $(".contact-details").find(".email").text(contacts[index].email);
+  $(".contact-details").find(".phone").text(contacts[index].phone);
+  $(".contact-details").find(".landLine").text(contacts[index].landLine);
+  $(".contact-details").find(".website").text(contacts[index].url);
+  temp=contacts[index].address;
+  temp=temp.replace("\n","<br>");
+  $(".contact-details").find(".address").html(temp);
 }
 
 function hideAll() {
   $(".form-container").css("visibility", "hidden");
-  $(".view-details").css("visibility", "hidden");
+  $(".contact-details").css("visibility", "hidden");
 }
 
 function toggleDetails() {
-  $(".view-details").css("visibility", "visible");
+  $(".contact-details").css("visibility", "visible");
   $(".form-container").css("position", "absolute").css("margin-left", "20%").css("visibility", "hidden");
 }
 
 function toggleForm() {
   $(".form-container").css("visibility", "visible");
-  $(".view-details").css("position", "absolute").css("margin-left", "20%").css("visibility", "hidden");
+  $(".contact-details").css("position", "absolute").css("margin-left", "20%").css("visibility", "hidden");
 }

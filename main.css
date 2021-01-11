@@ -41,21 +41,23 @@ body {
   justify-content: space-between;
 }
 
-.present, .option:hover {
+.navbar>.options>.option:hover {
   border-left: 3px solid white !important;
   background-color: #ff9900;
   cursor: pointer;
 }
-
+.present{
+  background-color: rgb(255,153,0,0.5);
+}
 /* styling for navigation options */
-.options {
+.navbar>.options {
   padding-left: 8px;
   padding-top: 5px;
   font-weight: 600;
 }
 
 /* styling for option in navigation menu */
-.option {
+.navbar>.options>.option {
   padding: 5px 14px;
   display: inline;
   border-left: 3px solid #333333;

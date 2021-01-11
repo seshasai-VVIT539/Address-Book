@@ -19,7 +19,7 @@ body{
   border: 1px solid rgba(0,0,0,0.2);
   cursor: pointer;
 }
-.view-details{
+.contact-details{
   width: 40%;
   margin:20px 0 0 5%;
 }
@@ -32,12 +32,12 @@ body{
   overflow-x: hidden;
   font-size: 40px;
 }
- .details-options{
+ .details-header>.options{
    display: flex;
    margin-top: 20px;
    justify-content: space-around;
  }
-.details-option{
+.details-header>.options>.option{
   padding: 0 10px;
   cursor: pointer;
   height: 20px;
@@ -55,4 +55,14 @@ body{
   display: table-cell;
   vertical-align: middle;
   padding: 5px;
+}
+.form>.table:last-child{
+  justify-content: space-around;
+}
+.req{
+  color: rgb(255,0,0);
+  padding-top: 5px;
+}
+input[type="button"]{
+  margin: 0 50px;
 }

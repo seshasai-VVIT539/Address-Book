@@ -38,11 +38,6 @@
   padding-bottom: 10px;
 }
 
-/* right side of the form */
-.values {
-  /padding-left: 10px;
-}
-
 #nameError, #mailError, #phoneError, #landLineError, #websiteError, #addressError {
   color: red;
   padding-top: 5px;
