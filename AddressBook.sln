@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook", "AddressBook\AddressBook.csproj", "{132A975B-E430-4389-B0FE-FFB7C562A9A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsDataAccess", "ContactsDataAccess\ContactsDataAccess.csproj", "{3FD947D6-9A4A-4DC8-B5DC-A5D4C1B223DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{132A975B-E430-4389-B0FE-FFB7C562A9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132A975B-E430-4389-B0FE-FFB7C562A9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132A975B-E430-4389-B0FE-FFB7C562A9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132A975B-E430-4389-B0FE-FFB7C562A9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD947D6-9A4A-4DC8-B5DC-A5D4C1B223DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD947D6-9A4A-4DC8-B5DC-A5D4C1B223DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD947D6-9A4A-4DC8-B5DC-A5D4C1B223DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD947D6-9A4A-4DC8-B5DC-A5D4C1B223DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {074CFAFC-6826-4EAA-AEF8-9DFCAAED5811}
+	EndGlobalSection
+EndGlobal
